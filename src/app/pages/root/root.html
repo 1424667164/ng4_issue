@@ -1,0 +1,99 @@
+<div class="header-out">
+    <div class="header-logo"></div>
+    <div class="header-title"></div>
+</div>
+<section id="container" [ngClass]="{'home':router.url=='/home/a','login':router.url=='/login'}">
+    <!--<login-page *ngIf="!login" (loginClick)="doLogin()"></login-page>-->
+    <!--header start-->
+    <header class="header white-bg">
+        <div class="sidebar-toggle-box">
+            <div class="fa fa-bars tooltips" data-placement="right" data-original-title="可伸缩导航" #toggle></div>
+        </div>
+        <!--logo start-->
+        <a [routerLink]="'/home'" class="logo">协同工作平台</a>
+        <!--logo end-->
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+            <span class="fa fa-th-large"></span>
+        </button>
+        <div class="horizontal-menu navbar-collapse collapse ">
+            <ul class="nav navbar-nav">
+                <li><a routerLinkActive="active" [routerLink]="'/home'">首页</a></li>
+                <li><a routerLinkActive="active" [routerLink]="'/message'">通告</a></li>
+                <li><a routerLinkActive="active" [routerLink]="'/mywork'">我的工作</a></li>
+                <li><a routerLinkActive="active" [routerLink]="['/transfer']">文件流转</a></li>
+                <li><a routerLinkActive="active" [routerLink]="'/policy'">政策制度</a></li>
+            </ul>
+        </div>
+
+        <div class="top-nav ">
+            <!--search & user info start-->
+            <ul class="nav pull-right top-menu">
+                <!--li>
+                    <input type="text" class="form-control search" placeholder="Search">
+                </li-->
+                <!-- user login dropdown start-->
+                <li class="dropdown">
+                    <a data-toggle="dropdown" class="dropdown-toggle" href="#">
+                        <!--<img alt="" src="img/avatar1_small.jpg">-->
+                        <span class="username">{{user.user.name + '    '}}</span>
+                        <b class="caret"></b>
+                    </a>
+                    <ul class="dropdown-menu extended logout">
+                        <!--<div class="log-arrow-up"></div>-->
+                        <!--li><a href="#"><i class=" fa fa-suitcase"></i>Profile</a></li>
+                        <li><a href="#"><i class="fa fa-cog"></i> Settings</a></li>
+                        <li><a href="#"><i class="fa fa-bell-o"></i> Notification</a></li-->
+                        <li><a data-toggle="modal" href="#myModal6"><i class="fa fa-key"></i> 退出系统 </a></li>
+                    </ul>
+                </li>
+                <!-- user login dropdown end -->
+            </ul>
+            <!--search & user info end-->
+        </div>
+    </header>
+    <!--header end-->
+    <!--sidebar start-->
+    <aside>
+        <!--<side-nav [navs]="navs" [toggle]="toggle"></side-nav>-->
+    </aside>
+    <!--sidebar end-->
+    <!--main content start-->
+    <section id="main-content" [ngClass]="{'full-screen': router.url=='/login'}">
+        <section class="wrapper">
+            <router-outlet></router-outlet>
+        </section>
+        <!--footer start-->
+        <footer class="site-footer">
+            <div class="text-center">
+                {{thisyear}} &copy; 中国建筑第八工程局工程研究院.
+                <!--<a href="#" class="go-top">
+                    <i class="fa fa-angle-up"></i>
+                </a>-->
+            </div>
+        </footer>
+        <!--footer end-->
+    </section>
+    <!--main content end-->
+</section>
+
+<div class="modal fade modal-dialog-center" id="myModal6" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="false"
+    style="display: none;" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content-wrap">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h4 class="modal-title">警告</h4>
+                </div>
+                <div class="modal-body">
+                    请确保当前所有工作都已保存<br>
+                    确认退出工作平台？
+
+                </div>
+                <div class="modal-footer">
+                    <button data-dismiss="modal" class="btn btn-default" type="button">取消</button>
+                    <button data-dismiss="modal" class="btn btn-danger" type="button" (click)="doLogout()"> 确定</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

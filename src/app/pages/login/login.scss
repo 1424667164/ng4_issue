@@ -1,0 +1,89 @@
+.wrapper.login{
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: white;
+    z-index: 2000;
+    background-image: url("../../img/lock-bg.jpg");
+    background-size: cover;
+    color: white;
+    overflow-y: auto;
+    .wrapper-container{
+        max-width: 850px;
+        margin: 0 auto !important;
+        h2{
+            margin-left: -15px;
+            font-size: 3em;
+            margin-bottom: 0;
+            color: #eeeeee;
+            b{
+                padding-left: 8px;
+                font-size: 0.7em;
+            }
+        }
+        h3{
+            margin-left: -12px;
+            font-size: 1.21em;
+            margin-top: 0;
+            color: #eeeeee;
+        }
+        h1{
+            margin-left: -15px;
+            margin-bottom: 30px;
+            font-size: 4em
+        }
+        div{
+            position: relative;
+            .login-left{
+                height: 360px;
+                background-image: url("../../img/login-left.jpg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                background-position-y: center;
+                padding: 0 !important;
+                margin: 0 !important;
+            }
+            form{
+                padding: 0 !important;
+                margin: 0 !important;
+                max-width: none !important;
+                border-radius: 0 !important;
+                -webkit-border-radius: 0 !important;
+                h2.form-signin-heading{
+                    border-radius: 0 !important;
+                    -webkit-border-radius: 0 !important;
+                    margin-left:  0 !important;
+                    font-size: 18px !important;
+                }
+            }
+        }
+    }
+}
+#main-content.full-screen .wrapper.login{
+    margin-top: 0 !important;
+    padding-bottom: 0 !important;
+    padding: 0 !important;
+}
+@media (max-width: 768px){
+    .wrapper.login{
+        .login-left{
+            display: none;
+        }
+        .wrapper{
+            margin-top: 0 !important;
+        }
+        .wrapper-container > h2, .wrapper-container > h3 {
+            display: none;
+        }
+        .wrapper-container > h1 {
+            font-size: 3em !important;
+            text-align: center;
+        }
+    }
+}
+
+#myModal{
+    color: #797979;
+}

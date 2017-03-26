@@ -1,1 +1,36 @@
 /* You can add global styles to this file, and also import other style files */
+* {
+    box-sizing: border-box;
+}
+html, body {
+    width: 100%;
+    height: 100%;
+    background-color: #1e1e1e;
+    -webkit-user-select: none;
+    padding: 0;
+    margin: 0;
+}
+
+body {
+    border: 2px solid #333;
+}
+
+#main > *:last-child {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transition: all 0.5s;
+    overflow: hidden;
+
+    transform: translateX(-100%);
+}
+
+#main > *:last-child.leave {
+    transform: translateX(100%);
+}
+
+#main > *:last-child.enter {
+    transform: translateX(0);
+}
